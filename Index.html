@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSG 2.0</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">C</div>
+
+            <div>
+                <h3>SSG</h3>
+                <span>Software-Cantar</span>
+            </div>
+        </div>
+
+        <nav class="nav">
+
+            <button class="nav-btn active" data-page="dashboard">
+                <span>🏠</span>
+                Dashboard
+            </button>
+
+            <button class="nav-btn" data-page="weighings">
+                <span>⚖️</span>
+                Cantar
+            </button>
+
+            <button class="nav-btn" data-page="trucks">
+                <span>🚛</span>
+                Transport
+            </button>
+
+            <button class="nav-btn" data-page="drivers">
+                <span>👨</span>
+                Drivers
+            </button>
+
+            <button class="nav-btn" data-page="products">
+                <span>📦</span>
+                Products
+            </button>
+
+            <button class="nav-btn" data-page="clients">
+                <span>🏢</span>
+                Clients
+            </button>
+
+            <button class="nav-btn" data-page="reports">
+                <span>📊</span>
+                Reports
+            </button>
+
+            <button class="nav-btn" data-page="settings">
+                <span>⚙️</span>
+                Settings
+            </button>
+
+        </nav>
+
+    </aside>
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <!-- DASHBOARD -->
+
+        <section class="page active" id="dashboard">
+
+            <div class="page-header">
+
+                <div>
+                    <h1>Operations Center</h1>
+                    <p>Live overview of weighing activity</p>
+                </div>
+
+                <button class="primary-btn">
+                    New Weighing
+                </button>
+
+            </div>
+
+            <div class="hero-panel glass">
+
+                <div>
+
+                    <span class="section-label">
+                        CURRENT SCALE
+                    </span>
+
+                    <h2 class="live-scale">
+                        44,620 KG
+                    </h2>
+
+                    <div class="status online">
+                        ● Connected
+                    </div>
+
+                </div>
+
+                <div class="hero-stats">
+
+                    <div>
+                        <span>Today's Weighings</span>
+                        <strong>147</strong>
+                    </div>
+
+                    <div>
+                        <span>Trucks On Site</span>
+                        <strong>32</strong>
+                    </div>
+
+                    <div>
+                        <span>Total Tons</span>
+                        <strong>1248</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="dashboard-grid">
+
+                <div class="glass panel">
+
+                    <h3>Recent Activity</h3>
+
+                    <div class="activity">
+
+                        <div class="activity-item">
+                            <strong>AG50VRA</strong>
+                            <span>Completed weighing</span>
+                        </div>
+
+                        <div class="activity-item">
+                            <strong>BV99JRC</strong>
+                            <span>Entered site</span>
+                        </div>
+
+                        <div class="activity-item">
+                            <strong>CJ11TRK</strong>
+                            <span>Awaiting exit</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="glass panel">
+
+                    <h3>Alerts</h3>
+
+                    <div class="alert-card">
+                        Truck waiting over 2 hours
+                    </div>
+
+                    <div class="alert-card">
+                        Scale calibration due in 5 days
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- WEIGHINGS -->
+
+        <section class="page" id="weighings">
+
+            <div class="page-header">
+
+                <div>
+                    <h1>Weighing Station</h1>
+                    <p>Create and manage weighing jobs</p>
+                </div>
+
+                <button class="primary-btn">
+                    New Job
+                </button>
+
+            </div>
+
+            <!-- MAIN WEIGHING PANEL -->
+
+            <div class="glass weighing-station">
+
+                <div class="station-grid">
+
+                    <div class="field">
+                        <label>Tractor</label>
+                        <input type="text" value="AG50VRA">
+                    </div>
+
+                    <div class="field">
+                        <label>Trailer</label>
+                        <input type="text" value="AG50VRA">
+                    </div>
+
+                    <div class="field">
+                        <label>Driver</label>
+                        <input type="text" value="MANDA GHEORGHE">
+                    </div>
+
+                    <div class="field">
+                        <label>Product</label>
+                        <input type="text" value="MATERIE PRIMA KNORR">
+                    </div>
+
+                    <div class="field">
+                        <label>Supplier</label>
+                        <input type="text" value="SYMRISE">
+                    </div>
+
+                    <div class="field">
+                        <label>Client</label>
+                        <input type="text" value="UNILEVER">
+                    </div>
+
+                </div>
+
+                <div class="weight-display">
+
+                    <span>Current Weight</span>
+
+                    <h2>
+                        44,620 KG
+                    </h2>
+
+                </div>
+
+                <div class="weight-row">
+
+                    <div>
+                        <span>Weight In</span>
+                        <strong>44,620</strong>
+                    </div>
+
+                    <div>
+                        <span>Weight Out</span>
+                        <strong>12,200</strong>
+                    </div>
+
+                    <div>
+                        <span>Net Weight</span>
+                        <strong>32,420</strong>
+                    </div>
+
+                </div>
+
+                <div class="station-actions">
+
+                    <button class="primary-btn">
+                        Save
+                    </button>
+
+                    <button class="secondary-btn">
+                        Print Ticket
+                    </button>
+
+                    <button class="secondary-btn">
+                        Complete
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- ACTIVE JOBS -->
+
+            <div class="section-header">
+
+                <h2>Active Jobs</h2>
+
+            </div>
+
+            <div class="job-grid">
+
+                <div class="glass job-card">
+
+                    <div class="job-header">
+
+                        <div>
+                            <h3>AG50VRA</h3>
+                            <p>MATERIE PRIMA KNORR</p>
+                        </div>
+
+                        <span class="badge pending">
+                            On Site
+                        </span>
+
+                    </div>
+
+                    <div class="job-weight">
+                        44,620 KG
+                    </div>
+
+                    <button class="expand-btn">
+                        View Details
+                    </button>
+
+                    <div class="job-details">
+
+                        <div class="details-grid">
+
+                            <div>
+                                <label>Driver</label>
+                                <strong>MANDA GHEORGHE</strong>
+                            </div>
+
+                            <div>
+                                <label>Supplier</label>
+                                <strong>SYMRISE</strong>
+                            </div>
+
+                            <div>
+                                <label>Client</label>
+                                <strong>UNILEVER</strong>
+                            </div>
+
+                            <div>
+                                <label>Date</label>
+                                <strong>17/06/2026</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="glass job-card">
+
+                    <div class="job-header">
+
+                        <div>
+                            <h3>BV99JRC</h3>
+                            <p>RAW MATERIALS</p>
+                        </div>
+
+                        <span class="badge success">
+                            Complete
+                        </span>
+
+                    </div>
+
+                    <div class="job-weight">
+                        17,200 KG
+                    </div>
+
+                    <button class="expand-btn">
+                        View Details
+                    </button>
+
+                    <div class="job-details">
+
+                        <div class="details-grid">
+
+                            <div>
+                                <label>Driver</label>
+                                <strong>BALAS CRISTIAN</strong>
+                            </div>
+
+                            <div>
+                                <label>Supplier</label>
+                                <strong>KNORR</strong>
+                            </div>
+
+                            <div>
+                                <label>Client</label>
+                                <strong>UNILEVER</strong>
+                            </div>
+
+                            <div>
+                                <label>Date</label>
+                                <strong>17/06/2026</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- TRUCKS -->
+
+        <section class="page" id="trucks">
+
+            <div class="page-header">
+                <h1>Fleet Management</h1>
+            </div>
+
+            <div class="glass page-panel">
+                Trucks module
+            </div>
+
+        </section>
+
+        <!-- DRIVERS -->
+
+        <section class="page" id="drivers">
+
+            <div class="page-header">
+                <h1>Drivers</h1>
+            </div>
+
+            <div class="glass page-panel">
+                Drivers module
+            </div>
+
+        </section>
+
+        <!-- PRODUCTS -->
+
+        <section class="page" id="products">
+
+            <div class="page-header">
+                <h1>Products</h1>
+            </div>
+
+            <div class="glass page-panel">
+                Products module
+            </div>
+
+        </section>
+
+        <!-- CLIENTS -->
+
+        <section class="page" id="clients">
+
+            <div class="page-header">
+                <h1>Clients</h1>
+            </div>
+
+            <div class="glass page-panel">
+                Clients module
+            </div>
+
+        </section>
+
+        <!-- REPORTS -->
+
+        <section class="page" id="reports">
+
+            <div class="page-header">
+                <h1>Reports</h1>
+            </div>
+
+            <div class="glass page-panel">
+                Reports module
+            </div>
+
+        </section>
+
+        <!-- SETTINGS -->
+
+        <section class="page" id="settings">
+
+            <div class="page-header">
+                <h1>Settings</h1>
+            </div>
+
+            <div class="glass page-panel">
+                Settings module
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
