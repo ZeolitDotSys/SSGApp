@@ -203,6 +203,25 @@ body{
     font-size:38px;
 }
 
+.camera-section{
+    padding:22px;
+    margin-bottom:25px;
+}
+
+.camera-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows:repeat(2,180px);
+    gap:18px;
+}
+
+.camera-feed{
+    border-radius:18px;
+    background:linear-gradient(135deg,rgba(255,255,255,.045),rgba(255,255,255,.02));
+    border:1px solid rgba(255,255,255,.08);
+    min-height:180px;
+}
+
 .dashboard-grid{
     display:grid;
     grid-template-columns:2fr 1fr;
@@ -515,6 +534,11 @@ body{
         grid-template-columns:1fr 1fr;
     }
 
+    .camera-grid{
+        grid-template-columns:repeat(2,1fr);
+        grid-template-rows:repeat(3,170px);
+    }
+
     .transport-details{
         grid-template-columns:repeat(2,1fr);
     }
@@ -543,6 +567,11 @@ body{
 
     .hero-stats{
         flex-wrap:wrap;
+    }
+
+    .camera-grid{
+        grid-template-columns:1fr;
+        grid-template-rows:repeat(6,170px);
     }
 
     .transport-toggle{
