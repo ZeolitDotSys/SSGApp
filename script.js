@@ -1,5 +1,5 @@
 // ===========================
-// PAGE NAVIGATION
+// NAVIGARE ÎNTRE PAGINI
 // ===========================
 
 const navButtons = document.querySelectorAll(".nav-btn");
@@ -38,7 +38,7 @@ navButtons.forEach(button => {
 });
 
 // ===========================
-// EXPANDABLE JOB CARDS
+// CARDURI EXTENSIBILE PENTRU LUCRĂRI
 // ===========================
 
 function initializeJobCards() {
@@ -60,8 +60,8 @@ function initializeJobCards() {
 
             button.textContent =
                 isOpen
-                ? "Hide Details"
-                : "View Details";
+                ? "Ascunde detaliile"
+                : "Vezi detalii";
 
         });
 
@@ -72,7 +72,7 @@ function initializeJobCards() {
 initializeJobCards();
 
 // ===========================
-// DEMO LIVE SCALE
+// CÂNTAR LIVE DEMO
 // ===========================
 
 const liveWeight =
@@ -97,7 +97,7 @@ if(liveWeight){
 }
 
 // ===========================
-// NEW JOB DEMO
+// LUCRARE NOUĂ DEMO
 // ===========================
 
 const newJobButton =
@@ -126,11 +126,11 @@ if(newJobButton){
 
                 <div>
                     <h3>TR${truckNumber}VSD</h3>
-                    <p>NEW MATERIAL</p>
+                    <p>MATERIAL NOU</p>
                 </div>
 
                 <span class="badge pending">
-                    On Site
+                    În incintă
                 </span>
 
             </div>
@@ -140,7 +140,7 @@ if(newJobButton){
             </div>
 
             <button class="expand-btn">
-                View Details
+                Vezi detalii
             </button>
 
             <div class="job-details">
@@ -148,13 +148,13 @@ if(newJobButton){
                 <div class="details-grid">
 
                     <div>
-                        <label>Driver</label>
-                        <strong>NEW DRIVER</strong>
+                        <label>Șofer</label>
+                        <strong>ȘOFER NOU</strong>
                     </div>
 
                     <div>
-                        <label>Supplier</label>
-                        <strong>NEW SUPPLIER</strong>
+                        <label>Furnizor</label>
+                        <strong>FURNIZOR NOU</strong>
                     </div>
 
                     <div>
@@ -163,8 +163,8 @@ if(newJobButton){
                     </div>
 
                     <div>
-                        <label>Date</label>
-                        <strong>${new Date().toLocaleDateString()}</strong>
+                        <label>Data</label>
+                        <strong>${new Date().toLocaleDateString("ro-RO")}</strong>
                     </div>
 
                 </div>
@@ -181,7 +181,7 @@ if(newJobButton){
 }
 
 // ===========================
-// BUTTON EFFECTS
+// EFECTE BUTOANE
 // ===========================
 
 document
@@ -205,16 +205,16 @@ document
 });
 
 // ===========================
-// FAKE REAL-TIME ACTIVITY
+// ACTIVITATE LIVE DEMO
 // ===========================
 
 const activities = [
-    "Truck entered site",
-    "Weight captured",
-    "Driver assigned",
-    "Ticket printed",
-    "Truck exited",
-    "Job completed"
+    "Camion intrat în incintă",
+    "Greutate preluată",
+    "Șofer alocat",
+    "Tichet tipărit",
+    "Camion ieșit din incintă",
+    "Lucrare finalizată"
 ];
 
 const activityContainer =
