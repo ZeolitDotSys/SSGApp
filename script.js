@@ -157,6 +157,115 @@ transportRows.forEach(row => {
 });
 
 // ===========================
+// RAPOARTE MOCKUP
+// ===========================
+
+const reportRows = document.querySelectorAll("#report-table-body tr");
+const reportSearch = document.querySelector(".report-search");
+const reportReset = document.querySelector(".report-reset");
+const reportCount = document.getElementById("report-count");
+const reportTotal = document.getElementById("report-total");
+const reportAverage = document.getElementById("report-average");
+const reportEmpty = document.getElementById("report-empty");
+
+function parseReportDate(value) {
+    return value ? new Date(`${value}T00:00:00`) : null;
+}
+
+function updateReportSummary(visibleRows) {
+    const count = visibleRows.length;
+    const total = visibleRows.reduce((sum, row) => {
+        return sum + Number(row.dataset.weight || 0);
+    }, 0);
+
+    const average = count > 0
+        ? Math.round(total / count)
+        : 0;
+
+    if(reportCount) reportCount.textContent = count;
+    if(reportTotal) reportTotal.textContent = `${total.toLocaleString("ro-RO")} KG`;
+    if(reportAverage) reportAverage.textContent = `${average.toLocaleString("ro-RO")} KG`;
+    if(reportEmpty) reportEmpty.classList.toggle("show", count === 0);
+}
+
+function filterReports() {
+    if(!reportRows.length) return;
+
+    const dateFrom = parseReportDate(document.getElementById("report-date-from")?.value);
+    const dateTo = parseReportDate(document.getElementById("report-date-to")?.value);
+    const timeFrom = document.getElementById("report-time-from")?.value || "";
+    const timeTo = document.getElementById("report-time-to")?.value || "";
+    const supplier = document.getElementById("report-supplier")?.value.toLowerCase() || "";
+    const truck = document.getElementById("report-truck")?.value.toLowerCase().trim() || "";
+    const weightMin = Number(document.getElementById("report-weight-min")?.value || 0);
+    const weightMaxValue = document.getElementById("report-weight-max")?.value;
+    const weightMax = weightMaxValue ? Number(weightMaxValue) : Infinity;
+
+    const visibleRows = [];
+
+    reportRows.forEach(row => {
+        const rowDate = parseReportDate(row.dataset.date);
+        const rowTime = row.dataset.time || "";
+        const rowSupplier = row.dataset.supplier?.toLowerCase() || "";
+        const rowTruck = row.dataset.truck?.toLowerCase() || "";
+        const rowWeight = Number(row.dataset.weight || 0);
+
+        const matchesDateFrom = !dateFrom || rowDate >= dateFrom;
+        const matchesDateTo = !dateTo || rowDate <= dateTo;
+        const matchesTimeFrom = !timeFrom || rowTime >= timeFrom;
+        const matchesTimeTo = !timeTo || rowTime <= timeTo;
+        const matchesSupplier = !supplier || rowSupplier === supplier;
+        const matchesTruck = !truck || rowTruck.includes(truck);
+        const matchesWeight = rowWeight >= weightMin && rowWeight <= weightMax;
+
+        const isVisible =
+            matchesDateFrom &&
+            matchesDateTo &&
+            matchesTimeFrom &&
+            matchesTimeTo &&
+            matchesSupplier &&
+            matchesTruck &&
+            matchesWeight;
+
+        row.classList.toggle("hide", !isVisible);
+
+        if(isVisible){
+            visibleRows.push(row);
+        }
+    });
+
+    updateReportSummary(visibleRows);
+}
+
+function resetReports() {
+    const fields = document.querySelectorAll(".report-filter");
+
+    fields.forEach(field => {
+        if(field.type === "date" || field.type === "time" || field.type === "number" || field.type === "text"){
+            field.value = "";
+        }
+
+        if(field.tagName === "SELECT"){
+            field.value = "";
+        }
+    });
+
+    filterReports();
+}
+
+if(reportSearch){
+    reportSearch.addEventListener("click", filterReports);
+}
+
+if(reportReset){
+    reportReset.addEventListener("click", resetReports);
+}
+
+if(reportRows.length){
+    updateReportSummary([...reportRows]);
+}
+
+// ===========================
 // CÂNTAR LIVE DEMO
 // ===========================
 
