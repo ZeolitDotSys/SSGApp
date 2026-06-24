@@ -186,7 +186,6 @@
             </div>
 
             <div class="transport-list glass">
-
                 <div class="transport-row open">
                     <button class="transport-toggle">
                         <span class="transport-main"><strong>AG50VRA</strong><small>Camion frigorific • MATERIE PRIMĂ KNORR</small></span>
@@ -281,13 +280,186 @@
                         <div><label>Companie destinatară</label><strong>SSG GROUP</strong></div>
                     </div>
                 </div>
-
             </div>
         </section>
 
         <section class="page" id="reports">
-            <div class="page-header"><h1>Rapoarte</h1></div>
-            <div class="glass page-panel">Modul rapoarte</div>
+            <div class="page-header">
+                <div>
+                    <h1>Rapoarte</h1>
+                    <p>Caută lucrări înregistrate după perioadă, furnizor, TIR și greutate.</p>
+                </div>
+                <button class="primary-btn report-export">Exportă raport</button>
+            </div>
+
+            <div class="reports-layout">
+                <div class="glass report-filters">
+                    <div class="report-block-header">
+                        <div>
+                            <span class="section-label">FILTRARE LUCRĂRI</span>
+                            <h3>Criterii raport</h3>
+                        </div>
+                    </div>
+
+                    <div class="report-form-grid">
+                        <div class="field">
+                            <label>Data început</label>
+                            <input class="report-filter" type="date" id="report-date-from" value="2026-06-17">
+                        </div>
+
+                        <div class="field">
+                            <label>Data sfârșit</label>
+                            <input class="report-filter" type="date" id="report-date-to" value="2026-06-17">
+                        </div>
+
+                        <div class="field">
+                            <label>Ora de la</label>
+                            <input class="report-filter" type="time" id="report-time-from" value="08:00">
+                        </div>
+
+                        <div class="field">
+                            <label>Ora până la</label>
+                            <input class="report-filter" type="time" id="report-time-to" value="18:00">
+                        </div>
+
+                        <div class="field">
+                            <label>Furnizor</label>
+                            <select class="report-filter" id="report-supplier">
+                                <option value="">Toți furnizorii</option>
+                                <option>SYMRISE</option>
+                                <option>KNORR</option>
+                                <option>SSG LOGISTICS</option>
+                                <option>ECO PACK</option>
+                                <option>TECH INDUSTRY</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label>TIR / Număr auto</label>
+                            <input class="report-filter" type="text" id="report-truck" placeholder="ex: AG50VRA">
+                        </div>
+
+                        <div class="field">
+                            <label>Greutate minimă KG</label>
+                            <input class="report-filter" type="number" id="report-weight-min" placeholder="0">
+                        </div>
+
+                        <div class="field">
+                            <label>Greutate maximă KG</label>
+                            <input class="report-filter" type="number" id="report-weight-max" placeholder="50000">
+                        </div>
+                    </div>
+
+                    <div class="report-actions">
+                        <button class="primary-btn report-search" type="button">Caută lucrări</button>
+                        <button class="secondary-btn report-reset" type="button">Resetează filtre</button>
+                    </div>
+                </div>
+
+                <div class="report-summary-grid">
+                    <div class="glass report-summary-card">
+                        <span>Lucrări găsite</span>
+                        <strong id="report-count">5</strong>
+                    </div>
+
+                    <div class="glass report-summary-card">
+                        <span>Total net</span>
+                        <strong id="report-total">96,640 KG</strong>
+                    </div>
+
+                    <div class="glass report-summary-card">
+                        <span>Medie / lucrare</span>
+                        <strong id="report-average">19,328 KG</strong>
+                    </div>
+                </div>
+
+                <div class="glass report-results">
+                    <div class="report-block-header">
+                        <div>
+                            <span class="section-label">BAZĂ DE DATE</span>
+                            <h3>Lucrări înregistrate</h3>
+                        </div>
+                        <span class="report-status">Mockup local</span>
+                    </div>
+
+                    <div class="report-table-wrap">
+                        <table class="report-table">
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Ora</th>
+                                    <th>TIR</th>
+                                    <th>Furnizor</th>
+                                    <th>Client</th>
+                                    <th>Intrare KG</th>
+                                    <th>Ieșire KG</th>
+                                    <th>Net KG</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="report-table-body">
+                                <tr data-date="2026-06-17" data-time="08:45" data-truck="AG50VRA" data-supplier="SYMRISE" data-weight="32420">
+                                    <td>17/06/2026</td>
+                                    <td>08:45</td>
+                                    <td>AG50VRA</td>
+                                    <td>SYMRISE</td>
+                                    <td>UNILEVER</td>
+                                    <td>44,620</td>
+                                    <td>12,200</td>
+                                    <td><strong>32,420</strong></td>
+                                    <td><span class="badge success">Finalizat</span></td>
+                                </tr>
+                                <tr data-date="2026-06-17" data-time="09:10" data-truck="BV99JRC" data-supplier="KNORR" data-weight="17200">
+                                    <td>17/06/2026</td>
+                                    <td>09:10</td>
+                                    <td>BV99JRC</td>
+                                    <td>KNORR</td>
+                                    <td>UNILEVER</td>
+                                    <td>29,400</td>
+                                    <td>12,200</td>
+                                    <td><strong>17,200</strong></td>
+                                    <td><span class="badge success">Finalizat</span></td>
+                                </tr>
+                                <tr data-date="2026-06-17" data-time="10:30" data-truck="CJ11TRK" data-supplier="SSG LOGISTICS" data-weight="24870">
+                                    <td>17/06/2026</td>
+                                    <td>10:30</td>
+                                    <td>CJ11TRK</td>
+                                    <td>SSG LOGISTICS</td>
+                                    <td>SSG LOGISTICS</td>
+                                    <td>38,950</td>
+                                    <td>14,080</td>
+                                    <td><strong>24,870</strong></td>
+                                    <td><span class="badge pending">În lucru</span></td>
+                                </tr>
+                                <tr data-date="2026-06-17" data-time="12:15" data-truck="IF72MAR" data-supplier="ECO PACK" data-weight="8640">
+                                    <td>17/06/2026</td>
+                                    <td>12:15</td>
+                                    <td>IF72MAR</td>
+                                    <td>ECO PACK</td>
+                                    <td>SSG GROUP</td>
+                                    <td>18,320</td>
+                                    <td>9,680</td>
+                                    <td><strong>8,640</strong></td>
+                                    <td><span class="badge success">Finalizat</span></td>
+                                </tr>
+                                <tr data-date="2026-06-17" data-time="14:20" data-truck="TM44LIV" data-supplier="TECH INDUSTRY" data-weight="13510">
+                                    <td>17/06/2026</td>
+                                    <td>14:20</td>
+                                    <td>TM44LIV</td>
+                                    <td>TECH INDUSTRY</td>
+                                    <td>SSG GROUP</td>
+                                    <td>31,760</td>
+                                    <td>18,250</td>
+                                    <td><strong>13,510</strong></td>
+                                    <td><span class="badge success">Finalizat</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="report-empty" id="report-empty">Nu există lucrări pentru filtrele selectate.</div>
+                </div>
+            </div>
         </section>
 
         <section class="page" id="settings">
