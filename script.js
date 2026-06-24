@@ -1,4 +1,43 @@
 // ===========================
+// MENIU MOBIL
+// ===========================
+
+const sidebar = document.querySelector(".sidebar");
+const menuToggle = document.querySelector(".menu-toggle");
+const mobileBackdrop = document.querySelector(".mobile-backdrop");
+
+function closeMobileMenu() {
+    sidebar?.classList.remove("open");
+    menuToggle?.classList.remove("open");
+    mobileBackdrop?.classList.remove("show");
+    menuToggle?.setAttribute("aria-expanded", "false");
+}
+
+function openMobileMenu() {
+    sidebar?.classList.add("open");
+    menuToggle?.classList.add("open");
+    mobileBackdrop?.classList.add("show");
+    menuToggle?.setAttribute("aria-expanded", "true");
+}
+
+if(menuToggle){
+    menuToggle.addEventListener("click", () => {
+        const isOpen = sidebar?.classList.contains("open");
+        isOpen ? closeMobileMenu() : openMobileMenu();
+    });
+}
+
+if(mobileBackdrop){
+    mobileBackdrop.addEventListener("click", closeMobileMenu);
+}
+
+window.addEventListener("resize", () => {
+    if(window.innerWidth > 900){
+        closeMobileMenu();
+    }
+});
+
+// ===========================
 // NAVIGARE ÎNTRE PAGINI
 // ===========================
 
@@ -28,10 +67,21 @@ navButtons.forEach(button => {
             page.classList.add("active");
         }
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+        closeMobileMenu();
+
+        const main = document.querySelector(".main");
+
+        if(main){
+            main.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        } else {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
 
     });
 
@@ -47,6 +97,10 @@ function initializeJobCards() {
         document.querySelectorAll(".expand-btn");
 
     buttons.forEach(button => {
+
+        if(button.dataset.initialized === "true") return;
+
+        button.dataset.initialized = "true";
 
         button.addEventListener("click", () => {
 
@@ -220,6 +274,8 @@ document
 .forEach(button => {
 
     button.addEventListener("mouseenter", () => {
+
+        if(window.innerWidth <= 900) return;
 
         button.style.transform =
             "translateY(-2px)";
