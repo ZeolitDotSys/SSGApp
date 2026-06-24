@@ -72,6 +72,37 @@ function initializeJobCards() {
 initializeJobCards();
 
 // ===========================
+// ACCORDION TRANSPORT
+// ===========================
+
+const transportRows =
+    document.querySelectorAll(".transport-row");
+
+transportRows.forEach(row => {
+
+    const toggle =
+        row.querySelector(".transport-toggle");
+
+    if(!toggle) return;
+
+    toggle.addEventListener("click", () => {
+
+        const isOpen =
+            row.classList.contains("open");
+
+        transportRows.forEach(item =>
+            item.classList.remove("open")
+        );
+
+        if(!isOpen){
+            row.classList.add("open");
+        }
+
+    });
+
+});
+
+// ===========================
 // CÂNTAR LIVE DEMO
 // ===========================
 
