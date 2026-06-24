@@ -4,24 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SSG 2.0</title>
-
-    <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="app">
 
-    <!-- BARĂ LATERALĂ -->
-
     <aside class="sidebar">
-
         <div class="logo">
             <div class="logo-icon">C</div>
-
             <div>
                 <h3>SSG</h3>
                 <span>Software Cântar</span>
@@ -29,460 +21,287 @@
         </div>
 
         <nav class="nav">
-
-            <button class="nav-btn active" data-page="dashboard">
-                <span>🏠</span>
-                Panou principal
-            </button>
-
-            <button class="nav-btn" data-page="weighings">
-                <span>⚖️</span>
-                Cântar
-            </button>
-
-            <button class="nav-btn" data-page="trucks">
-                <span>🚛</span>
-                Transport
-            </button>
-
-            <button class="nav-btn" data-page="drivers">
-                <span>👨</span>
-                Șoferi
-            </button>
-
-            <button class="nav-btn" data-page="products">
-                <span>📦</span>
-                Produse
-            </button>
-
-            <button class="nav-btn" data-page="clients">
-                <span>🏢</span>
-                Clienți
-            </button>
-
-            <button class="nav-btn" data-page="reports">
-                <span>📊</span>
-                Rapoarte
-            </button>
-
-            <button class="nav-btn" data-page="settings">
-                <span>⚙️</span>
-                Setări
-            </button>
-
+            <button class="nav-btn active" data-page="dashboard"><span>🏠</span>Panou principal</button>
+            <button class="nav-btn" data-page="weighings"><span>⚖️</span>Cântar</button>
+            <button class="nav-btn" data-page="trucks"><span>🚛</span>Transport</button>
+            <button class="nav-btn" data-page="drivers"><span>👨</span>Șoferi</button>
+            <button class="nav-btn" data-page="products"><span>📦</span>Produse</button>
+            <button class="nav-btn" data-page="clients"><span>🏢</span>Clienți</button>
+            <button class="nav-btn" data-page="reports"><span>📊</span>Rapoarte</button>
+            <button class="nav-btn" data-page="settings"><span>⚙️</span>Setări</button>
         </nav>
-
     </aside>
-
-    <!-- CONȚINUT PRINCIPAL -->
 
     <main class="main">
 
-        <!-- PANOU PRINCIPAL -->
-
         <section class="page active" id="dashboard">
-
             <div class="page-header">
-
                 <div>
                     <h1>Centru operațional</h1>
                     <p>Prezentare live a activității de cântărire</p>
                 </div>
-
-                <button class="primary-btn">
-                    Cântărire nouă
-                </button>
-
+                <button class="primary-btn">Cântărire nouă</button>
             </div>
 
             <div class="hero-panel glass">
-
                 <div>
-
-                    <span class="section-label">
-                        CÂNTAR CURENT
-                    </span>
-
-                    <h2 class="live-scale">
-                        44,620 KG
-                    </h2>
-
-                    <div class="status online">
-                        ● Conectat
-                    </div>
-
+                    <span class="section-label">CÂNTAR CURENT</span>
+                    <h2 class="live-scale">44,620 KG</h2>
+                    <div class="status online">● Conectat</div>
                 </div>
 
                 <div class="hero-stats">
-
-                    <div>
-                        <span>Cântăriri astăzi</span>
-                        <strong>147</strong>
-                    </div>
-
-                    <div>
-                        <span>Camioane în incintă</span>
-                        <strong>32</strong>
-                    </div>
-
-                    <div>
-                        <span>Total tone</span>
-                        <strong>1248</strong>
-                    </div>
-
+                    <div><span>Cântăriri astăzi</span><strong>147</strong></div>
+                    <div><span>Camioane în incintă</span><strong>32</strong></div>
+                    <div><span>Total tone</span><strong>1248</strong></div>
                 </div>
-
             </div>
 
             <div class="dashboard-grid">
-
                 <div class="glass panel">
-
                     <h3>Activitate recentă</h3>
-
                     <div class="activity">
-
-                        <div class="activity-item">
-                            <strong>AG50VRA</strong>
-                            <span>Cântărire finalizată</span>
-                        </div>
-
-                        <div class="activity-item">
-                            <strong>BV99JRC</strong>
-                            <span>A intrat în incintă</span>
-                        </div>
-
-                        <div class="activity-item">
-                            <strong>CJ11TRK</strong>
-                            <span>Așteaptă ieșirea</span>
-                        </div>
-
+                        <div class="activity-item"><strong>AG50VRA</strong><span>Cântărire finalizată</span></div>
+                        <div class="activity-item"><strong>BV99JRC</strong><span>A intrat în incintă</span></div>
+                        <div class="activity-item"><strong>CJ11TRK</strong><span>Așteaptă ieșirea</span></div>
                     </div>
-
                 </div>
 
                 <div class="glass panel">
-
                     <h3>Alerte</h3>
-
-                    <div class="alert-card">
-                        Camionul așteaptă de peste 2 ore
-                    </div>
-
-                    <div class="alert-card">
-                        Calibrarea cântarului este necesară în 5 zile
-                    </div>
-
+                    <div class="alert-card">Camionul așteaptă de peste 2 ore</div>
+                    <div class="alert-card">Calibrarea cântarului este necesară în 5 zile</div>
                 </div>
-
             </div>
-
         </section>
 
-        <!-- CÂNTĂRIRI -->
-
         <section class="page" id="weighings">
-
             <div class="page-header">
-
                 <div>
                     <h1>Stație de cântărire</h1>
                     <p>Creează și gestionează operațiunile de cântărire</p>
                 </div>
-
-                <button class="primary-btn">
-                    Lucrare nouă
-                </button>
-
+                <button class="primary-btn">Lucrare nouă</button>
             </div>
 
-            <!-- PANOU PRINCIPAL CÂNTĂRIRE -->
-
             <div class="glass weighing-station">
-
                 <div class="station-grid">
-
-                    <div class="field">
-                        <label>Cap tractor</label>
-                        <input type="text" value="AG50VRA">
-                    </div>
-
-                    <div class="field">
-                        <label>Remorcă</label>
-                        <input type="text" value="AG50VRA">
-                    </div>
-
-                    <div class="field">
-                        <label>Șofer</label>
-                        <input type="text" value="MANDA GHEORGHE">
-                    </div>
-
-                    <div class="field">
-                        <label>Produs</label>
-                        <input type="text" value="MATERIE PRIMĂ KNORR">
-                    </div>
-
-                    <div class="field">
-                        <label>Furnizor</label>
-                        <input type="text" value="SYMRISE">
-                    </div>
-
-                    <div class="field">
-                        <label>Client</label>
-                        <input type="text" value="UNILEVER">
-                    </div>
-
+                    <div class="field"><label>Cap tractor</label><input type="text" value="AG50VRA"></div>
+                    <div class="field"><label>Remorcă</label><input type="text" value="AG50VRA"></div>
+                    <div class="field"><label>Șofer</label><input type="text" value="MANDA GHEORGHE"></div>
+                    <div class="field"><label>Produs</label><input type="text" value="MATERIE PRIMĂ KNORR"></div>
+                    <div class="field"><label>Furnizor</label><input type="text" value="SYMRISE"></div>
+                    <div class="field"><label>Client</label><input type="text" value="UNILEVER"></div>
                 </div>
 
                 <div class="weight-display">
-
                     <span>Greutate curentă</span>
-
-                    <h2>
-                        44,620 KG
-                    </h2>
-
+                    <h2>44,620 KG</h2>
                 </div>
 
                 <div class="weight-row">
-
-                    <div>
-                        <span>Greutate intrare</span>
-                        <strong>44,620</strong>
-                    </div>
-
-                    <div>
-                        <span>Greutate ieșire</span>
-                        <strong>12,200</strong>
-                    </div>
-
-                    <div>
-                        <span>Greutate netă</span>
-                        <strong>32,420</strong>
-                    </div>
-
+                    <div><span>Greutate intrare</span><strong>44,620</strong></div>
+                    <div><span>Greutate ieșire</span><strong>12,200</strong></div>
+                    <div><span>Greutate netă</span><strong>32,420</strong></div>
                 </div>
 
                 <div class="station-actions">
-
-                    <button class="primary-btn">
-                        Salvează
-                    </button>
-
-                    <button class="secondary-btn">
-                        Tipărește tichet
-                    </button>
-
-                    <button class="secondary-btn">
-                        Finalizează
-                    </button>
-
+                    <button class="primary-btn">Salvează</button>
+                    <button class="secondary-btn">Tipărește tichet</button>
+                    <button class="secondary-btn">Finalizează</button>
                 </div>
-
             </div>
 
-            <!-- LUCRĂRI ACTIVE -->
-
-            <div class="section-header">
-
-                <h2>Lucrări active</h2>
-
-            </div>
+            <div class="section-header"><h2>Lucrări active</h2></div>
 
             <div class="job-grid">
-
                 <div class="glass job-card">
-
                     <div class="job-header">
-
-                        <div>
-                            <h3>AG50VRA</h3>
-                            <p>MATERIE PRIMĂ KNORR</p>
-                        </div>
-
-                        <span class="badge pending">
-                            În incintă
-                        </span>
-
+                        <div><h3>AG50VRA</h3><p>MATERIE PRIMĂ KNORR</p></div>
+                        <span class="badge pending">În incintă</span>
                     </div>
-
-                    <div class="job-weight">
-                        44,620 KG
-                    </div>
-
-                    <button class="expand-btn">
-                        Vezi detalii
-                    </button>
-
+                    <div class="job-weight">44,620 KG</div>
+                    <button class="expand-btn">Vezi detalii</button>
                     <div class="job-details">
-
                         <div class="details-grid">
-
-                            <div>
-                                <label>Șofer</label>
-                                <strong>MANDA GHEORGHE</strong>
-                            </div>
-
-                            <div>
-                                <label>Furnizor</label>
-                                <strong>SYMRISE</strong>
-                            </div>
-
-                            <div>
-                                <label>Client</label>
-                                <strong>UNILEVER</strong>
-                            </div>
-
-                            <div>
-                                <label>Data</label>
-                                <strong>17/06/2026</strong>
-                            </div>
-
+                            <div><label>Șofer</label><strong>MANDA GHEORGHE</strong></div>
+                            <div><label>Furnizor</label><strong>SYMRISE</strong></div>
+                            <div><label>Client</label><strong>UNILEVER</strong></div>
+                            <div><label>Data</label><strong>17/06/2026</strong></div>
                         </div>
-
                     </div>
-
                 </div>
 
                 <div class="glass job-card">
-
                     <div class="job-header">
-
-                        <div>
-                            <h3>BV99JRC</h3>
-                            <p>MATERII PRIME</p>
-                        </div>
-
-                        <span class="badge success">
-                            Finalizat
-                        </span>
-
+                        <div><h3>BV99JRC</h3><p>MATERII PRIME</p></div>
+                        <span class="badge success">Finalizat</span>
                     </div>
-
-                    <div class="job-weight">
-                        17,200 KG
-                    </div>
-
-                    <button class="expand-btn">
-                        Vezi detalii
-                    </button>
-
+                    <div class="job-weight">17,200 KG</div>
+                    <button class="expand-btn">Vezi detalii</button>
                     <div class="job-details">
-
                         <div class="details-grid">
-
-                            <div>
-                                <label>Șofer</label>
-                                <strong>BALAS CRISTIAN</strong>
-                            </div>
-
-                            <div>
-                                <label>Furnizor</label>
-                                <strong>KNORR</strong>
-                            </div>
-
-                            <div>
-                                <label>Client</label>
-                                <strong>UNILEVER</strong>
-                            </div>
-
-                            <div>
-                                <label>Data</label>
-                                <strong>17/06/2026</strong>
-                            </div>
-
+                            <div><label>Șofer</label><strong>BALAS CRISTIAN</strong></div>
+                            <div><label>Furnizor</label><strong>KNORR</strong></div>
+                            <div><label>Client</label><strong>UNILEVER</strong></div>
+                            <div><label>Data</label><strong>17/06/2026</strong></div>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
         </section>
-
-        <!-- TRANSPORT -->
 
         <section class="page" id="trucks">
-
             <div class="page-header">
-                <h1>Administrare flotă</h1>
+                <div>
+                    <h1>Administrare flotă</h1>
+                    <p>Transporturi, cântăriri și detalii complete pentru fiecare camion</p>
+                </div>
             </div>
 
-            <div class="glass page-panel">
-                Modul transport
-            </div>
+            <div class="transport-list glass">
 
+                <div class="transport-row open">
+                    <button class="transport-toggle">
+                        <span class="transport-main">
+                            <strong>AG50VRA</strong>
+                            <small>Camion frigorific • MATERIE PRIMĂ KNORR</small>
+                        </span>
+                        <span class="transport-meta">UNILEVER</span>
+                        <span class="transport-weight">32,420 KG net</span>
+                        <span class="transport-arrow">⌄</span>
+                    </button>
+
+                    <div class="transport-details">
+                        <div><label>Șofer</label><strong>MANDA GHEORGHE</strong></div>
+                        <div><label>Tip camion</label><strong>Camion frigorific 40T</strong></div>
+                        <div><label>Ora cântăririi</label><strong>08:45 intrare / 11:20 ieșire</strong></div>
+                        <div><label>Venit de la</label><strong>SYMRISE, Brașov</strong></div>
+                        <div><label>Greutate la sosire</label><strong>44,620 KG</strong></div>
+                        <div><label>Greutate la plecare</label><strong>12,200 KG</strong></div>
+                        <div><label>Greutate netă</label><strong>32,420 KG</strong></div>
+                        <div><label>Companie destinatară</label><strong>UNILEVER</strong></div>
+                    </div>
+                </div>
+
+                <div class="transport-row">
+                    <button class="transport-toggle">
+                        <span class="transport-main">
+                            <strong>BV99JRC</strong>
+                            <small>Autoutilitară prelata • MATERII PRIME</small>
+                        </span>
+                        <span class="transport-meta">KNORR</span>
+                        <span class="transport-weight">17,200 KG net</span>
+                        <span class="transport-arrow">⌄</span>
+                    </button>
+
+                    <div class="transport-details">
+                        <div><label>Șofer</label><strong>BALAS CRISTIAN</strong></div>
+                        <div><label>Tip camion</label><strong>Autoutilitară prelata 20T</strong></div>
+                        <div><label>Ora cântăririi</label><strong>09:10 intrare / 10:05 ieșire</strong></div>
+                        <div><label>Venit de la</label><strong>Depozit KNORR, București</strong></div>
+                        <div><label>Greutate la sosire</label><strong>29,400 KG</strong></div>
+                        <div><label>Greutate la plecare</label><strong>12,200 KG</strong></div>
+                        <div><label>Greutate netă</label><strong>17,200 KG</strong></div>
+                        <div><label>Companie destinatară</label><strong>UNILEVER</strong></div>
+                    </div>
+                </div>
+
+                <div class="transport-row">
+                    <button class="transport-toggle">
+                        <span class="transport-main">
+                            <strong>CJ11TRK</strong>
+                            <small>TIR cisternă • SIROP INDUSTRIAL</small>
+                        </span>
+                        <span class="transport-meta">SSG LOGISTICS</span>
+                        <span class="transport-weight">24,870 KG net</span>
+                        <span class="transport-arrow">⌄</span>
+                    </button>
+
+                    <div class="transport-details">
+                        <div><label>Șofer</label><strong>POPESCU MARIAN</strong></div>
+                        <div><label>Tip camion</label><strong>TIR cisternă alimentară</strong></div>
+                        <div><label>Ora cântăririi</label><strong>10:30 intrare / în așteptare ieșire</strong></div>
+                        <div><label>Venit de la</label><strong>Fabrică Cluj-Napoca</strong></div>
+                        <div><label>Greutate la sosire</label><strong>38,950 KG</strong></div>
+                        <div><label>Greutate la plecare</label><strong>14,080 KG estimat</strong></div>
+                        <div><label>Greutate netă</label><strong>24,870 KG estimat</strong></div>
+                        <div><label>Companie destinatară</label><strong>SSG LOGISTICS</strong></div>
+                    </div>
+                </div>
+
+                <div class="transport-row">
+                    <button class="transport-toggle">
+                        <span class="transport-main">
+                            <strong>IF72MAR</strong>
+                            <small>Camion container • AMBALAJE</small>
+                        </span>
+                        <span class="transport-meta">ECO PACK</span>
+                        <span class="transport-weight">8,640 KG net</span>
+                        <span class="transport-arrow">⌄</span>
+                    </button>
+
+                    <div class="transport-details">
+                        <div><label>Șofer</label><strong>DUMITRU ADRIAN</strong></div>
+                        <div><label>Tip camion</label><strong>Camion container 12T</strong></div>
+                        <div><label>Ora cântăririi</label><strong>12:15 intrare / 13:00 ieșire</strong></div>
+                        <div><label>Venit de la</label><strong>ECO PACK Pitești</strong></div>
+                        <div><label>Greutate la sosire</label><strong>18,320 KG</strong></div>
+                        <div><label>Greutate la plecare</label><strong>9,680 KG</strong></div>
+                        <div><label>Greutate netă</label><strong>8,640 KG</strong></div>
+                        <div><label>Companie destinatară</label><strong>SSG GROUP</strong></div>
+                    </div>
+                </div>
+
+                <div class="transport-row">
+                    <button class="transport-toggle">
+                        <span class="transport-main">
+                            <strong>TM44LIV</strong>
+                            <small>Camion platformă • UTILAJE</small>
+                        </span>
+                        <span class="transport-meta">TECH INDUSTRY</span>
+                        <span class="transport-weight">13,510 KG net</span>
+                        <span class="transport-arrow">⌄</span>
+                    </button>
+
+                    <div class="transport-details">
+                        <div><label>Șofer</label><strong>IONIȚĂ FLORIN</strong></div>
+                        <div><label>Tip camion</label><strong>Camion platformă 26T</strong></div>
+                        <div><label>Ora cântăririi</label><strong>14:20 intrare / 15:40 ieșire</strong></div>
+                        <div><label>Venit de la</label><strong>TECH INDUSTRY Timișoara</strong></div>
+                        <div><label>Greutate la sosire</label><strong>31,760 KG</strong></div>
+                        <div><label>Greutate la plecare</label><strong>18,250 KG</strong></div>
+                        <div><label>Greutate netă</label><strong>13,510 KG</strong></div>
+                        <div><label>Companie destinatară</label><strong>SSG GROUP</strong></div>
+                    </div>
+                </div>
+
+            </div>
         </section>
-
-        <!-- ȘOFERI -->
 
         <section class="page" id="drivers">
-
-            <div class="page-header">
-                <h1>Șoferi</h1>
-            </div>
-
-            <div class="glass page-panel">
-                Modul șoferi
-            </div>
-
+            <div class="page-header"><h1>Șoferi</h1></div>
+            <div class="glass page-panel">Modul șoferi</div>
         </section>
-
-        <!-- PRODUSE -->
 
         <section class="page" id="products">
-
-            <div class="page-header">
-                <h1>Produse</h1>
-            </div>
-
-            <div class="glass page-panel">
-                Modul produse
-            </div>
-
+            <div class="page-header"><h1>Produse</h1></div>
+            <div class="glass page-panel">Modul produse</div>
         </section>
-
-        <!-- CLIENȚI -->
 
         <section class="page" id="clients">
-
-            <div class="page-header">
-                <h1>Clienți</h1>
-            </div>
-
-            <div class="glass page-panel">
-                Modul clienți
-            </div>
-
+            <div class="page-header"><h1>Clienți</h1></div>
+            <div class="glass page-panel">Modul clienți</div>
         </section>
-
-        <!-- RAPOARTE -->
 
         <section class="page" id="reports">
-
-            <div class="page-header">
-                <h1>Rapoarte</h1>
-            </div>
-
-            <div class="glass page-panel">
-                Modul rapoarte
-            </div>
-
+            <div class="page-header"><h1>Rapoarte</h1></div>
+            <div class="glass page-panel">Modul rapoarte</div>
         </section>
 
-        <!-- SETĂRI -->
-
         <section class="page" id="settings">
-
-            <div class="page-header">
-                <h1>Setări</h1>
-            </div>
-
-            <div class="glass page-panel">
-                Modul setări
-            </div>
-
+            <div class="page-header"><h1>Setări</h1></div>
+            <div class="glass page-panel">Modul setări</div>
         </section>
 
     </main>
